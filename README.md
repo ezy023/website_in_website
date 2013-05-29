@@ -7,3 +7,5 @@ This is the standard Dev Bootcamp Sinatra file with some extras. Those include:
   - a rake console which puts you into an irb session loaded with access to the models
   - faker gem already required
   - carrierwave gem/environment present but commented out
+  - twitter bootstrap css min files linked in the layout 
+    - the full, unminified, files are available to browse through in the public/bootstrap directory
