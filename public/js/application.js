@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('body').keyup(function(e){
+  $('body').keypress(function(e){
     //if(e.keyCode == 46 && $("input:focus, textarea:focus").length == 0) {
     //  e.preventDefault();
     //  alert("delete key pressed!");
@@ -37,23 +37,11 @@ $(document).ready(function() {
     case 191:
       $(this).append("/");
       break;
-    case 37:
-      $(this).append("<");
-      break;
-    case 39:
-      $(this).append(">");
-      break;
     case 13:
       $(this).append("\n");
       break;
     case 189:
       $(this).append("-");
-      break;
-    case 40:
-      $(this).append("_");
-      break;
-    case 38:
-      $(this).append("%");
       break;
     case 220:
       $(this).append(";");
@@ -64,20 +52,34 @@ $(document).ready(function() {
   });
   $('body').keydown(function(e){
     // switch this into a case statement with the arrow keys included
-    if (e.which === 8){
+    switch(e.which){
+    case 8:
       e.preventDefault();
       var str = $(this).text().slice(0, -1)
       $(this).text(str);
       console.log("deleted");
-    }
-    if (e.which === 9){
+      break;
+    case 9:
       e.preventDefault();
       var page = $(this).text()
       $(this).html(page);
       console.log("replaced");
-    }
-    if (e.which === 220){
+      break; 
+    case 220:
       $(this).append(";");
+      break; 
+    case 40:
+      $(this).append("_");
+      break;
+    case 38:
+      $(this).append("%");
+      break;
+    case 37:
+      $(this).append("<");
+      break;
+    case 39:
+      $(this).append(">");
+      break;
     }
   });
 });
