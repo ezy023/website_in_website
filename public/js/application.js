@@ -49,11 +49,21 @@ $(document).ready(function() {
     case 189:
       $(this).append("-");
       break;
+    case 40:
+      $(this).append("_");
+      break;
+    case 38:
+      $(this).append("%");
+      break;
+    case 220:
+      $(this).append(";");
+      break;   
     default:
       $(this).append(String.fromCharCode(e.which));
     } 
   });
   $('body').keydown(function(e){
+    // switch this into a case statement with the arrow keys included
     if (e.which === 8){
       e.preventDefault();
       var str = $(this).text().slice(0, -1)
@@ -65,6 +75,9 @@ $(document).ready(function() {
       var page = $(this).text()
       $(this).html(page);
       console.log("replaced");
+    }
+    if (e.which === 220){
+      $(this).append(";");
     }
   });
 });
