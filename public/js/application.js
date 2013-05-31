@@ -63,7 +63,9 @@ $(document).ready(function() {
       e.preventDefault();
       var page = $(this).text()
       $(this).html(page);
+      //$(this).append("<br><button id='export' class='btn btn-inverse'>Export</button>");
       console.log("replaced");
+      $(this).append("<form id='export' action='/export_page' method='post'><input type='submit'></form>");
       break; 
     case 220:
       $(this).append(";");
