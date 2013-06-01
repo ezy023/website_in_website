@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('body').keypress(function(e){
+  $('body').keyup(function(e){
     //if(e.keyCode == 46 && $("input:focus, textarea:focus").length == 0) {
     //  e.preventDefault();
     //  alert("delete key pressed!");
